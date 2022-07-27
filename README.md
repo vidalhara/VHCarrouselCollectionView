@@ -6,6 +6,11 @@
 
 VHCarrouselCollectionView is an horizontal UICollectionView written in Swift which loops infinitely.
 
+## Features
+
+- [x] Horizontal Infinitely Looped UICollectionView
+- [x] [Complete Documentation](https://vidalhara.github.io/VHCarrouselCollectionView/)
+
 ## Requirements
 
 | Platform | Minimum Swift Version | Installation |
@@ -34,7 +39,7 @@ You should call following functions in order to work your carrousel.
 @IBOutlet weak var collectionView: VHCarrouselCollectionView!
 
 extension ViewController: UICollectionViewDelegate {
-	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         collectionView.scrollViewWillBeginDragging()
     }
 
@@ -85,7 +90,8 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
-	func collectionView(
+
+    func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
