@@ -16,5 +16,7 @@ import Foundation
     )
 
     /// Can be used for view operations
-    @objc optional func vhCarrouselView(_ carrouselView: VHCarrouselCollectionView, centeredIndexPath indexPath: IndexPath)
+    @objc optional func vhCarrouselView(
+        _ carrouselView: VHCarrouselCollectionView, centeredIndexPath indexPath: IndexPath
+    )
 }

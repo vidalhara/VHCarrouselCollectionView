@@ -15,7 +15,7 @@ VHCarrouselCollectionView is an horizontal UICollectionView written in Swift whi
 
 | Platform | Minimum Swift Version | Installation |
 | --- | --- | --- |
-| iOS 11.0+ | 4.0 | [Swift Package Manager](#swift-package-manager) |
+| iOS 10.0+ | 4.0 | [Swift Package Manager](#swift-package-manager) |
 
 ## Installation
 
@@ -64,6 +64,9 @@ collectionView.delegate = self
 collectionView.dataSource = self
 collectionView.carrouselDelegate = self
 collectionView.sourceMultiplier = .triple
+
+collectionView.configureTimer(interval: 2, animated: true)
+collectionView.enableTimer()
 
 extension ViewController: VHCarrouselCollectionViewDelegate {
     func vhCarrouselView(

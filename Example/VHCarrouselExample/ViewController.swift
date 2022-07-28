@@ -19,11 +19,12 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.carrouselDelegate = self
         collectionView.sourceMultiplier = .triple
-    }
+        collectionView.configureTimer(interval: 2, animated: true)
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        collectionView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+            self?.collectionView.enableTimer()
+        }
     }
 }
 

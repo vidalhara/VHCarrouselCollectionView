@@ -119,6 +119,8 @@ open class VHCarrouselCollectionView: UICollectionView {
         }
     }
 
+    internal let timerService = TimerService()
+
     /// Creates a collection view object with the specified frame and layout.
     ///
     /// - Parameters:
@@ -135,6 +137,12 @@ open class VHCarrouselCollectionView: UICollectionView {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupUI()
+    }
+
+    /// Tells the view that its window object changed.
+    open override func didMoveToWindow() {
+        super.didMoveToWindow()
+        timerService.configure(for: window)
     }
 
     /// Reloads all of the data for the collection view.
@@ -168,6 +176,7 @@ open class VHCarrouselCollectionView: UICollectionView {
         if scrollPosition == .centeredHorizontally {
             centeredIndexPath = indexPath
         }
+        timerService.restartIfNeeded()
     }
 }
 
@@ -177,6 +186,7 @@ public extension VHCarrouselCollectionView {
 
     /// Should be called in `UICollectionViewDelegate.scrollViewWillBeginDragging(...)`
     func scrollViewWillBeginDragging() {
+        timerService.stopSoftly()
         localSource.scrollViewWillBeginDragging(self)
     }
 
@@ -188,24 +198,13 @@ public extension VHCarrouselCollectionView {
     /// Should be called in `UICollectionViewDelegate.scrollViewDidEndScrollingAnimation(...)`
     func scrollViewDidEndScrollingAnimation() {
         localSource.scrollViewDidEndScrollingAnimation(self)
+        timerService.startIfNeeded()
     }
 }
 
 // MARK: - Public API
 
 public extension VHCarrouselCollectionView {
-
-    /// Scrolls the collection view contents until the specified item
-    /// which multiplied with `sourceMultiplier` is visible.
-    ///
-    /// - Parameters:
-    ///   - indexPath: The index path of the source item to scroll into view.
-    ///   - animated: Specify true to animate the scrolling behavior or
-    ///    false to adjust the scroll view’s visible content immediately.
-    func scrollToSource(indexPath: IndexPath, animated: Bool) {
-        let index: IndexPath = indexPath.shifted(for: self)
-        scrollToItem(at: index, at: .centeredHorizontally, animated: animated)
-    }
 
     /// Reloads all of the data for the collection view.
     /// - Parameter scrollToInitial: If value is true, first source item will be centered in view.
@@ -218,6 +217,8 @@ public extension VHCarrouselCollectionView {
         if localSource.rawTotalCount <= .zero {
             centeredIndexPath = nil
         }
+
+        timerService.configure(for: localSource.rawTotalCount)
     }
 }
 
@@ -234,7 +235,7 @@ internal extension VHCarrouselCollectionView {
         } else if indexPath.item < itemCount {
             scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
         } else {
-            scrollToSource(indexPath: IndexPath(item: itemCount, section: .zero), animated: animated)
+            scrollToSource(indexPath: IndexPath(item: itemCount - 1, section: .zero), animated: animated)
         }
     }
 }
@@ -245,5 +246,8 @@ private extension VHCarrouselCollectionView {
 
     func setupUI() {
         self.flowLayout.scrollDirection = .horizontal
+        timerService.action = { [weak self] animated in
+            self?.scrollToNext(animated: animated)
+        }
     }
 }
