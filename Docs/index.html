@@ -106,7 +106,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>iOS 11.0+</td>
+<td>iOS 10.0+</td>
 <td>4.0</td>
 <td><a href="#swift-package-manager">Swift Package Manager</a></td>
 </tr>
@@ -149,6 +149,9 @@ collectionView.delegate = self
 collectionView.dataSource = self
 collectionView.carrouselDelegate = self
 collectionView.sourceMultiplier = .triple
+
+collectionView.configureTimer(interval: 2, animated: true)
+collectionView.enableTimer()
 
 extension ViewController: VHCarrouselCollectionViewDelegate {
     func vhCarrouselView(

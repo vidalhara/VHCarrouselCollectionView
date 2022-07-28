@@ -423,6 +423,33 @@ This frame is passed to the superclass during initialization.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:@M@VHCarrouselCollectionView@objc(cs)VHCarrouselCollectionView(im)didMoveToWindow"></a>
+                    <a name="//apple_ref/swift/Method/didMoveToWindow()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@VHCarrouselCollectionView@objc(cs)VHCarrouselCollectionView(im)didMoveToWindow">didMoveToWindow()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the view that its window object changed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">didMoveToWindow</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:@M@VHCarrouselCollectionView@objc(cs)VHCarrouselCollectionView(im)reloadData"></a>
                     <a name="//apple_ref/swift/Method/reloadData()" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@VHCarrouselCollectionView@objc(cs)VHCarrouselCollectionView(im)reloadData">reloadData()</a>
@@ -533,6 +560,171 @@ false to adjust the scroll view’s visible content immediately.</p>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Scroll%20API"></a>
+                <a name="//apple_ref/swift/Section/Scroll API" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Scroll%20API"></a>
+                  <h3 class="section-name"><p>Scroll API</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25VHCarrouselCollectionViewAAC14scrollToSource9indexPath8animatedy10Foundation05IndexH0V_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/scrollToSource(indexPath:animated:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25VHCarrouselCollectionViewAAC14scrollToSource9indexPath8animatedy10Foundation05IndexH0V_SbtF">scrollToSource(indexPath:<wbr>animated:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Scrolls the collection view contents until the specified item
+which multiplied with <code><a href="../Classes/VHCarrouselCollectionView.html#/s:25VHCarrouselCollectionViewAAC16sourceMultiplierAB06SourceE0Ovp">sourceMultiplier</a></code> is visible.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">scrollToSource</span><span class="p">(</span><span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index path of the source item to scroll into view.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Specify true to animate the scrolling behavior or
+false to adjust the scroll view’s visible content immediately.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25VHCarrouselCollectionViewAAC12scrollToNext8animatedySb_tF"></a>
+                    <a name="//apple_ref/swift/Method/scrollToNext(animated:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25VHCarrouselCollectionViewAAC12scrollToNext8animatedySb_tF">scrollToNext(animated:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Scrolls to next item in view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">scrollToNext</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Scrolling animated if true. Default value is true.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25VHCarrouselCollectionViewAAC16scrollToPrevious8animatedySb_tF"></a>
+                    <a name="//apple_ref/swift/Method/scrollToPrevious(animated:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25VHCarrouselCollectionViewAAC16scrollToPrevious8animatedySb_tF">scrollToPrevious(animated:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Scrolls to previous item in view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">scrollToPrevious</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Scrolling animated if true. Default value is true.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -555,6 +747,136 @@ false to adjust the scroll view’s visible content immediately.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">SourceMultiplier</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Timer%20API"></a>
+                <a name="//apple_ref/swift/Section/Timer API" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Timer%20API"></a>
+                  <h3 class="section-name"><p>Timer API</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25VHCarrouselCollectionViewAAC14configureTimer8interval8animatedySd_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/configureTimer(interval:animated:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25VHCarrouselCollectionViewAAC14configureTimer8interval8animatedySd_SbtF">configureTimer(interval:<wbr>animated:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Setup timer to scroll next item in view periodically</p>
+<div class="aside aside-attention">
+    <p class="aside-title">Attention</p>
+    <p>- You should call <code><a href="../Classes/VHCarrouselCollectionView.html#/s:25VHCarrouselCollectionViewAAC11enableTimeryyF">enableTimer()</a></code> when we is ready</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">configureTimer</span><span class="p">(</span><span class="nv">interval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>interval</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Timer interval in seconds. Default value is 3.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Is scrolling to next item will be animated. Default value is true.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25VHCarrouselCollectionViewAAC11enableTimeryyF"></a>
+                    <a name="//apple_ref/swift/Method/enableTimer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25VHCarrouselCollectionViewAAC11enableTimeryyF">enableTimer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enables timer to scroll next item in view periodically.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">enableTimer</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:25VHCarrouselCollectionViewAAC12disableTimeryyF"></a>
+                    <a name="//apple_ref/swift/Method/disableTimer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:25VHCarrouselCollectionViewAAC12disableTimeryyF">disableTimer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Disables timer to scroll next item in view periodically.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">disableTimer</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -668,66 +990,6 @@ false to adjust the scroll view’s visible content immediately.</p>
                 </div>
               </div>
               <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:25VHCarrouselCollectionViewAAC14scrollToSource9indexPath8animatedy10Foundation05IndexH0V_SbtF"></a>
-                    <a name="//apple_ref/swift/Method/scrollToSource(indexPath:animated:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:25VHCarrouselCollectionViewAAC14scrollToSource9indexPath8animatedy10Foundation05IndexH0V_SbtF">scrollToSource(indexPath:<wbr>animated:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Scrolls the collection view contents until the specified item
-which multiplied with <code><a href="../Classes/VHCarrouselCollectionView.html#/s:25VHCarrouselCollectionViewAAC16sourceMultiplierAB06SourceE0Ovp">sourceMultiplier</a></code> is visible.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">scrollToSource</span><span class="p">(</span><span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>indexPath</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The index path of the source item to scroll into view.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>animated</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Specify true to animate the scrolling behavior or
-false to adjust the scroll view’s visible content immediately.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>

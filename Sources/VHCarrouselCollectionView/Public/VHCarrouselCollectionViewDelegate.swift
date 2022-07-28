@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// The methods adopted by the object you use to informe centered item in a collection view.
+/// The methods adopted by the object you use to inform centered item in a collection view.
 @objc public protocol VHCarrouselCollectionViewDelegate: AnyObject {
 
     /// Can be used for source operations
