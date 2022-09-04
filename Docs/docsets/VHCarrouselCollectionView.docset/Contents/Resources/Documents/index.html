@@ -20,7 +20,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          VHCarrouselCollectionView Docs
+          VHCarrouselCollectionView 1.0.1 Docs
         </a>
          (100% documented)
       </p>
@@ -87,7 +87,8 @@
 
 <p><a href="https://img.shields.io/badge/Swift-4.0_5.1_5.2_5.3_5.4_5.5-Orange"><img src="https://img.shields.io/badge/Swift-4.0_5.1_5.2_5.3_5.4_5.5_5.6_5.7-blue" alt="Swift"></a>
 <a href="https://img.shields.io/badge/Platforms-iOS-Blue"><img src="https://img.shields.io/badge/Platforms-iOS-blue" alt="Platforms"></a>
-<a href="https://img.shields.io/badge/Swift_Package_Manager-compatible-pistachiogreen"><img src="https://img.shields.io/badge/Swift_Package_Manager-compatible-pistachiogreen" alt="Swift Package Manager"></a></p>
+<a href="https://img.shields.io/badge/Swift_Package_Manager-compatible-pistachiogreen"><img src="https://img.shields.io/badge/Swift_Package_Manager-compatible-pistachiogreen" alt="Swift Package Manager"></a>
+<a href="https://img.shields.io/cocoapods/v/VHCarrouselCollectionView?color=pistachiogreen"><img src="https://img.shields.io/cocoapods/v/VHCarrouselCollectionView?color=pistachiogreen" alt="CocoaPods Compatible"></a></p>
 
 <p>VHCarrouselCollectionView is an horizontal UICollectionView written in Swift which loops infinitely.</p>
 <h2 id='features' class='heading'>Features</h2>
@@ -108,7 +109,7 @@
 <tr>
 <td>iOS 10.0+</td>
 <td>4.0</td>
-<td><a href="#swift-package-manager">Swift Package Manager</a></td>
+<td><a href="#swift-package-manager">Swift Package Manager</a>, <a href="#cocoapods">CocoaPods</a></td>
 </tr>
 </tbody></table>
 <h2 id='installation' class='heading'>Installation</h2>
@@ -118,8 +119,16 @@
 
 <p>Once you have your Swift package set up, adding VHCarrouselCollectionView as a dependency is as easy as adding it to the <code>dependencies</code> value of your <code>Package.swift</code>.</p>
 <pre class="highlight plaintext"><code>dependencies: [
-    .package(url: "https://github.com/vidalhara/VHCarrouselCollectionView.git", .upToNextMajor(from: "1.0.0"))
+    .package(
+        url: "https://github.com/vidalhara/VHCarrouselCollectionView.git", 
+        .upToNextMajor(from: "1.0.1")
+    )
 ]
+</code></pre>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p><a href="https://cocoapods.org">CocoaPods</a> is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate VHCarrouselCollectionView into your Xcode project using CocoaPods, specify it in your <code>Podfile</code>:</p>
+<pre class="highlight plaintext"><code>pod 'VHCarrouselCollectionView', '~&gt; 1.0.1'
 </code></pre>
 <h2 id='usage' class='heading'>Usage</h2>
 
@@ -132,9 +141,13 @@ extension ViewController: UICollectionViewDelegate {
     }
 
     func scrollViewWillEndDragging(
-        _ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer&lt;CGPoint&gt;
+        _ scrollView: UIScrollView, 
+        withVelocity velocity: CGPoint, 
+        targetContentOffset: UnsafeMutablePointer&lt;CGPoint&gt;
     ) {
-        collectionView.scrollViewWillEndDragging(with: velocity, targetContentOffset: targetContentOffset)
+        collectionView.scrollViewWillEndDragging(
+            with: velocity, targetContentOffset: targetContentOffset
+        )
     }
 
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
@@ -155,7 +168,8 @@ collectionView.enableTimer()
 
 extension ViewController: VHCarrouselCollectionViewDelegate {
     func vhCarrouselView(
-        _ carrouselView: VHCarrouselCollectionView, centeredSourceIndexPath sourceIndexPath: IndexPath
+        _ carrouselView: VHCarrouselCollectionView, 
+        centeredSourceIndexPath sourceIndexPath: IndexPath
     ) {
         debugPrint("\(sourceIndexPath.item)")
     }
@@ -163,14 +177,19 @@ extension ViewController: VHCarrouselCollectionViewDelegate {
 
 extension ViewController: UICollectionViewDataSource {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
+    func collectionView(
+        _ collectionView: UICollectionView, numberOfItemsInSection section: Int
+    ) -&gt; Int {
         return source.count
     }
 
     func collectionView(
         _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath
     ) -&gt; UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LocalCVC
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "Cell", for: indexPath
+        ) as! LocalCVC
+
         let sourceIndex = indexPath.vhCarrouselSourceIndexPath(for: collectionView).item
         cell.backgroundColor = source[sourceIndex]
         return cell
@@ -184,7 +203,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -&gt; CGSize {
-        return .init(width: collectionView.frame.width * 0.8, height: collectionView.frame.height)
+        return .init(
+            width: collectionView.frame.width * 0.8, 
+            height: collectionView.frame.height
+        )
     }
 
     func collectionView(

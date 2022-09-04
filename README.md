@@ -28,7 +28,10 @@ Once you have your Swift package set up, adding VHCarrouselCollectionView as a d
 
 ```
 dependencies: [
-    .package(url: "https://github.com/vidalhara/VHCarrouselCollectionView.git", .upToNextMajor(from: "1.0.1"))
+    .package(
+    	url: "https://github.com/vidalhara/VHCarrouselCollectionView.git", 
+    	.upToNextMajor(from: "1.0.1")
+    )
 ]
 ```
 
@@ -53,9 +56,13 @@ extension ViewController: UICollectionViewDelegate {
     }
 
     func scrollViewWillEndDragging(
-        _ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>
+        _ scrollView: UIScrollView, 
+        withVelocity velocity: CGPoint, 
+        targetContentOffset: UnsafeMutablePointer<CGPoint>
     ) {
-        collectionView.scrollViewWillEndDragging(with: velocity, targetContentOffset: targetContentOffset)
+        collectionView.scrollViewWillEndDragging(
+            with: velocity, targetContentOffset: targetContentOffset
+        )
     }
 
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
@@ -79,7 +86,8 @@ collectionView.enableTimer()
 
 extension ViewController: VHCarrouselCollectionViewDelegate {
     func vhCarrouselView(
-        _ carrouselView: VHCarrouselCollectionView, centeredSourceIndexPath sourceIndexPath: IndexPath
+        _ carrouselView: VHCarrouselCollectionView, 
+        centeredSourceIndexPath sourceIndexPath: IndexPath
     ) {
         debugPrint("\(sourceIndexPath.item)")
     }
@@ -87,14 +95,19 @@ extension ViewController: VHCarrouselCollectionViewDelegate {
 
 extension ViewController: UICollectionViewDataSource {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView, numberOfItemsInSection section: Int
+    ) -> Int {
         return source.count
     }
 
     func collectionView(
         _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LocalCVC
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "Cell", for: indexPath
+        ) as! LocalCVC
+        
         let sourceIndex = indexPath.vhCarrouselSourceIndexPath(for: collectionView).item
         cell.backgroundColor = source[sourceIndex]
         return cell
@@ -108,7 +121,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return .init(width: collectionView.frame.width * 0.8, height: collectionView.frame.height)
+        return .init(
+            width: collectionView.frame.width * 0.8, 
+            height: collectionView.frame.height
+        )
     }
 
     func collectionView(
