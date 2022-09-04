@@ -111,15 +111,17 @@ open class VHCarrouselCollectionView: UICollectionView {
         }
     }
 
-    /// The frame rectangle, which describes the view’s location and size in its superview’s coordinate system.
-    open override var frame: CGRect {
+    internal let timerService = TimerService()
+
+    private var currentFrameSize: CGSize = .zero {
         didSet {
-            guard oldValue != frame else { return }
+            guard oldValue != currentFrameSize else { return }
             localSource.updateInsets()
+            if let centeredIndexPath = centeredIndexPath {
+                super.scrollToItem(at: centeredIndexPath, at: .centeredHorizontally, animated: false)
+            }
         }
     }
-
-    internal let timerService = TimerService()
 
     /// Creates a collection view object with the specified frame and layout.
     ///
@@ -143,6 +145,12 @@ open class VHCarrouselCollectionView: UICollectionView {
     open override func didMoveToWindow() {
         super.didMoveToWindow()
         timerService.configure(for: window)
+    }
+
+    /// Lays out subviews.
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        currentFrameSize = frame.size
     }
 
     /// Reloads all of the data for the collection view.

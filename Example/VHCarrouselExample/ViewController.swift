@@ -21,10 +21,8 @@ class ViewController: UIViewController {
         collectionView.sourceMultiplier = .triple
         collectionView.configureTimer(interval: 2, animated: true)
 
-        DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadData()
-            self?.collectionView.enableTimer()
-        }
+        collectionView.reloadData()
+        collectionView.enableTimer()
     }
 }
 
@@ -45,13 +43,12 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        // swiftlint:disable force_cast
+        // swiftlint:disable:next force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LocalCVC
         let sourceIndex = indexPath.vhCarrouselSourceIndexPath(for: collectionView).item
         cell.backgroundColor = source[sourceIndex]
         cell.label.text = "\(indexPath.row)"
         return cell
-        // swiftlint:enable force_cast
     }
 }
 
