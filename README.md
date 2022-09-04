@@ -3,6 +3,7 @@
 [![Swift](https://img.shields.io/badge/Swift-4.0_5.1_5.2_5.3_5.4_5.5_5.6_5.7-blue)](https://img.shields.io/badge/Swift-4.0_5.1_5.2_5.3_5.4_5.5-Orange)
 [![Platforms](https://img.shields.io/badge/Platforms-iOS-blue)](https://img.shields.io/badge/Platforms-iOS-Blue)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-pistachiogreen)](https://img.shields.io/badge/Swift_Package_Manager-compatible-pistachiogreen)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/VHCarrouselCollectionView?color=pistachiogreen)](https://img.shields.io/cocoapods/v/VHCarrouselCollectionView?color=pistachiogreen)
 
 VHCarrouselCollectionView is an horizontal UICollectionView written in Swift which loops infinitely.
 
@@ -15,7 +16,7 @@ VHCarrouselCollectionView is an horizontal UICollectionView written in Swift whi
 
 | Platform | Minimum Swift Version | Installation |
 | --- | --- | --- |
-| iOS 10.0+ | 4.0 | [Swift Package Manager](#swift-package-manager) |
+| iOS 10.0+ | 4.0 | [Swift Package Manager](#swift-package-manager), [CocoaPods](#cocoapods) |
 
 ## Installation
 
@@ -27,8 +28,16 @@ Once you have your Swift package set up, adding VHCarrouselCollectionView as a d
 
 ```
 dependencies: [
-    .package(url: "https://github.com/vidalhara/VHCarrouselCollectionView.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/vidalhara/VHCarrouselCollectionView.git", .upToNextMajor(from: "1.0.1"))
 ]
+```
+
+### CocoaPods
+
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate VHCarrouselCollectionView into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```
+pod 'VHCarrouselCollectionView', '~> 1.0.1'
 ```
 
 ## Usage
